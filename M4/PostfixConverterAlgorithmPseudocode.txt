@@ -1,0 +1,37 @@
+
+create a new empty stack
+create an empty string to hold the postfix expression
+
+start while there is a character in the infix expression
+    next char that holds the working character
+    switch the char (next char)
+    case variable
+        append to the postfix expression
+        break
+    case exponent ^
+        push the ^ to the stack
+        break
+    case plus, minus, multiplication, divide
+        start while the stack is not empty && precedence of the next char is <= the precedence of the operand on the top of the stack
+            append the top of the stack to the postfix expression, using pop()
+        end while
+        add next char to the top of the stack
+        break
+    case open parentheses
+        push it to the top of the stack
+        break
+    case close parentheses
+        top = pop the top of the stack and hold it in a variable
+        start while top is not open parentheses (
+            append top to the postfix expression
+            top = the top of the stack again
+        end while
+        break
+    default
+        break
+end while
+start while the stack is not empty
+    pop the top of the stack
+    add it to the postfix expression
+end while
+return postfix
