@@ -46,18 +46,12 @@ public class Sorting {
      * @return boolean
      */
     public boolean isSortedAscending(int[] arr) {
-        int left = 0; // Left pointer
-        int right = arr.length - 1; // Right pointer
-
-        // Tests the left pointer is less than right; resulting in only half the array being compared
-        while (left < right) {
-            if (arr[left] > arr[right]) { // False if the value of left is greater than the value of right
+        // Loops each index and tests the value is not greater than the next value.
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) { // If i is greater than i+1 we know the array is not in ascending order
                 return false;
-            } else { // Moving the left and right pointers
-                left++;
-                right--;
             }
         }
-        return true; // Everything is sorted
+        return true; // Sorting is true
     }
 }
