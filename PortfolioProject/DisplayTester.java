@@ -16,10 +16,13 @@ import java.util.List;
  */
 public class DisplayTester {
     public static void main(String[] args) {
+
+        // Variables needed for testing
         Display display = new Display();
         List<IndividualOrder> nameSortedList = display.getLastnameSorted();
         List<IndividualOrder> orderNumberSortedList = display.getOrderNumberSorted();
 
+        // Adding the orders to use for testing
         display.add(new IndividualOrder(3, "Caperton", 12.12));
         display.add(new IndividualOrder(1, "Smith", 99.99));
         display.add(new IndividualOrder(9, "Doe", 19.95));
@@ -74,8 +77,13 @@ public class DisplayTester {
         display.printAll();
 
         // Testing the remove(orderNumber) method
-        System.out.println("\n<== Testing remove(orderNumber");
+        System.out.println("\n<== Testing remove(orderNumber)");
         display.remove(2);
+        display.printAll();
+
+        //Testing quicksort()
+        System.out.println("\n<== Testing quicksort()");
+        display.quicksort();
         display.printAll();
     }
 }

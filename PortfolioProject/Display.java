@@ -59,7 +59,7 @@ public class Display {
      */
     public void quicksort() {
         quicksort(lastnameSorted, 0, lastnameSorted.size() - 1, "lastname");
-        quicksort(lastnameSorted, 0, lastnameSorted.size() - 1, "order");
+        quicksort(orderNumberSorted, 0, lastnameSorted.size() - 1, "order");
     }
 
     /**
@@ -200,13 +200,14 @@ public class Display {
      * Prints the sorted objects in both the lastname and order number list.
      */
     public void printAll() {
-        System.out.println("\n<== Printing the orders sorted by lastname:");
+        System.out.println("\n<== DISPLAY PRINTING");
+        System.out.println("<== Printing the orders sorted by lastname:");
         // Printing the lastname list
         for (IndividualOrder individualOrder : this.lastnameSorted) {
             individualOrder.print();
         }
 
-        System.out.println("\n<== Printing the orders sorted by order number:");
+        System.out.println("<== Printing the orders sorted by order number:");
         // Printing the order number list
         for (IndividualOrder individualOrder : this.orderNumberSorted) {
             individualOrder.print();
